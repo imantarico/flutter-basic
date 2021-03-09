@@ -40,7 +40,7 @@ class _MyappState extends State<Myapp> {
                         controller: txtjkelamin,
                         decoration: InputDecoration(hintText: 'Jenis Kelamin'),
                       ),
-                      RaisedButton(
+                      ElevatedButton(
                           child: Text("Tambah"),
                           onPressed: null),
                     ],
@@ -72,7 +72,7 @@ onTambah() {
   ```
 >## Langkah 3: Panggil Pada Design
 
-ganti properties `RaisedButton` dengan `onPressed: onTambah,`
+ganti properties `ElevatedButton` dengan `onPressed: onTambah,`
 
 masukkan Array kedalam ListView
 ```dart
