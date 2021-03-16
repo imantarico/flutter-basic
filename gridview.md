@@ -9,49 +9,34 @@ Pada flutter untuk membuat tampilan grid view dapat menggunakan GridView widget.
 ```dart
 import 'package:flutter/material.dart';
 
-void main() => runApp(Myapp());
+final Color darkBlue = Color.fromARGB(255, 18, 32, 47);
 
-class Myapp extends StatefulWidget {
-  _MyappState createState() => _MyappState();
+void main() {
+  runApp(MyApp());
 }
 
-class _MyappState extends State<Myapp> {
-  //deklarasi variabel
-  final txtnamamhs = TextEditingController();
-  final txtjkelamin = TextEditingController();
-  
+class MyApp extends StatelessWidget {
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: new Scaffold(
-            appBar: new AppBar(title: Text("Belajar Pintar")),
-            body: new ListView(
-              children: <Widget>[
-                new Container(
-                  padding: EdgeInsets.all(10.0),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                      TextField(
-                        controller: txtnamamhs,
-                        decoration: InputDecoration(hintText: 'Nama Mahasiswa'),
-                      ),
-                      TextField(
-                        controller: txtjkelamin,
-                        decoration: InputDecoration(hintText: 'Jenis Kelamin'),
-                      ),
-                      ElevatedButton(
-                          child: Text("Tambah"),
-                          onPressed: null),
-                    ],
-                  ),
-                ),
-                new Column(
-                    // Isi List View
-                )
-              ],
-            )));
+      theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: darkBlue),
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        body: GridView.count(
+          crossAxisCount: 3,
+          children: <Widget>[
+            FlutterLogo(),
+            FlutterLogo(),
+            FlutterLogo(),
+            FlutterLogo(),
+            FlutterLogo(),
+          ],
+        ),
+      ),
+    );
   }
 }
+
 ```
 Nilai tiga (3) pada crossAxisCount merupakan nilai untuk jumlah column pada grid. Sedangkan children merupakan widget turunan yang akan ditampilkan berjumlah lima logo Flutter dalam bentuk grid. Hasil code diatas akan menjadi seperti ini
 
