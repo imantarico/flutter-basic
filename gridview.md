@@ -1,61 +1,47 @@
 # PENGGUNAAN GRIDVIEW DI FLUTTER
 
-Pada flutter untuk membuat tampilan grid view dapat menggunakan GridView widget. Penggunaan GridView di Flutter seperti penggabungan antara penggunaan ListView widget serta penggunaan row dan column widget. Berikut contoh sederhana Penggunaan GridView di flutter framework
+Pada flutter untuk membuat tampilan grid view dapat menggunakan GridView widget. Penggunaan GridView di Flutter seperti penggabungan antara penggunaan ListView widget serta penggunaan row dan column widget. 
 
 
 
->## Langkah 1: Buat Class yang menggunakan StatefulWidget
+>## Berikut contoh sederhana Penggunaan GridView di flutter framework
 
 ```dart
 import 'package:flutter/material.dart';
 
-void main() => runApp(Myapp());
+final Color darkBlue = Color.fromARGB(255, 18, 32, 47);
 
-class Myapp extends StatefulWidget {
-  _MyappState createState() => _MyappState();
+void main() {
+  runApp(MyApp());
 }
 
-class _MyappState extends State<Myapp> {
-  //deklarasi variabel
-  final txtnamamhs = TextEditingController();
-  final txtjkelamin = TextEditingController();
-  
+class MyApp extends StatelessWidget {
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: new Scaffold(
-            appBar: new AppBar(title: Text("Belajar Pintar")),
-            body: new ListView(
-              children: <Widget>[
-                new Container(
-                  padding: EdgeInsets.all(10.0),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                      TextField(
-                        controller: txtnamamhs,
-                        decoration: InputDecoration(hintText: 'Nama Mahasiswa'),
-                      ),
-                      TextField(
-                        controller: txtjkelamin,
-                        decoration: InputDecoration(hintText: 'Jenis Kelamin'),
-                      ),
-                      ElevatedButton(
-                          child: Text("Tambah"),
-                          onPressed: null),
-                    ],
-                  ),
-                ),
-                new Column(
-                    // Isi List View
-                )
-              ],
-            )));
+      theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: darkBlue),
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        body: GridView.count(
+          crossAxisCount: 3,
+          children: <Widget>[
+            FlutterLogo(),
+            FlutterLogo(),
+            FlutterLogo(),
+            FlutterLogo(),
+            FlutterLogo(),
+          ],
+        ),
+      ),
+    );
   }
 }
+
+
 ```
 >## Langkah 2: Buat Listview Contructor untuk Getter (Pengambilan Data)
 
-Letakkan program di bawah ini pada tempat deklarasi variabel
+GridView dasarnya merupakan CustomScrollView widget yang dapat di scroll (scrollable) sehingga tidak perlu khawatir apabila jumlah dari widget grid melebihi ukuran layar. Dalam GridView kita juga dapat menggunakan List.generate untuk membuat anakan widget sesuai dengan jumlah data array. Contohnya seperti ini
 ```dart
 List<Widget> data = [];
 
