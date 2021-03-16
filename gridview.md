@@ -4,7 +4,7 @@ Pada flutter untuk membuat tampilan grid view dapat menggunakan GridView widget.
 
 
 
-># PEnggunaan Gridview secara sederhana
+># Penggunaan Gridview secara sederhana
 
 ```dart
 import 'package:flutter/material.dart';
@@ -98,7 +98,7 @@ GridView.custom
 GridView.extent
 Sebenarnya dari segi penggunaan ke-lima fungsi tersebut juga sangat mirip. Sebagai contoh kita akan menampilkan 2 column grid dengan 4 widget yang berisi logo flutter menggunakan semua jenis GridView yang ada.
 
->## GridView.count
+># GridView.count
 ```dart
 GridView.count(
   crossAxisCount: 2,
@@ -110,7 +110,7 @@ GridView.count(
   ],
 )
 ```
->## GridView.bulder
+># GridView.bulder
 ```dart
 GridView.builder(
   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
@@ -119,7 +119,7 @@ GridView.builder(
 )
 ```
 
->## GridView.custom
+># GridView.custom
 ```dart
 GridView.custom(
   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
@@ -134,7 +134,7 @@ GridView.custom(
 )
 ```
 
->## GridView.extent
+># GridView.extent
 ```dart
 GridView.extent(
   maxCrossAxisExtent: 400,
@@ -147,7 +147,7 @@ GridView.extent(
 )
 ```
 
->## GridView
+># GridView
 ```dart
 GridView(
   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
