@@ -63,7 +63,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Nurcahyo - Kelas'),
+        title: Text('Rico Imanta Ginting - Kelas'),
       ),
       body: ListView(children: <Widget>[
         Center(
