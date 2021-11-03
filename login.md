@@ -17,7 +17,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Nurcahyo - Kelas'),
+        title: Text('Rico - Kelas'),
       ),
       body: Center(child: Text("Step-1")),
     );
